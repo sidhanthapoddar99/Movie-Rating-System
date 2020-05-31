@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Portal Landing page</title>
+		<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png"  href= "{{ url_for('static',filename='Login_v10/images/icons/favicon.ico') }}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/vendor/bootstrap/css/bootstrap.min.css') }}" >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}" >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body style="background-image: url({{ url_for('static',filename='Login_v10/movies-made-great-white-north.jpg') }});background-repeat: no-repeat; background-size: cover;">
+
+<div class="limiter" >
+					<div class="container-login100">
+						<div class="wrap-login100 p-t-50 p-b-90" style="padding-left:10px; padding-right:10px;">
+							<form class="login100-form validate-form flex-sb flex-w" >
+								<span class="login100-form-title p-b-51">
+									Administrator Login
+								</span>
+
+								
+								
+								
+	<!--
+
+								<div class="container-login100-form-btn m-t-17">
+									<form method="get" action="/deluseracc">
+  									 <button class="login100-form-btn" type=submit value='Delete all user accounts' name='deluseracc' Continueeonclick="window.location.href='/deluseracc' ">
+  									 </button>
+									</form>
+								</div>
+
+	-->
+								
+								<div class="container-login100-form-btn m-t-17">
+								<a href = '/deluseracc' class="login100-form-btn"></input type=submit name='deluseracc'>Delete all user accounts
+								</a></div>
+
+								<div class="container-login100-form-btn m-t-17">
+								<a href = '/deluseractivity' class="login100-form-btn"></input type = submit value = "Delete all user activity" name = 'deluseractivity'>Delete all user activity</a></div>
+								
+								<div class="container-login100-form-btn m-t-17">
+								<a href = '/viewuseracc' class="login100-form-btn"></input type = submit value = "View User account information" name = 'viewuseracc'>View User account information
+								</a></div>
+
+								<div class="container-login100-form-btn m-t-17">
+								<a href = '/viewuseractivity' class="login100-form-btn"></input type = submit value = "View User account activity" name = 'viewuseractivity'>View User account activity
+								</a></div>
+
+
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+		
+
+
+<div>
+
+
+	
+
+</body>
+</html>

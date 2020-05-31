@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Workshop &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='workshop/css/style.css') }}">
+  </head>
+ <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0"><a href="/testresult" class="text-white h2 mb-0">Movie<span class="text-primary">Rating</span></a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active"><a href="/">Home</a></li>
+                
+                <li><a href= "/login">login</input type = submit value= 'Login' name = 'login'></a></li>
+                <li><a href= "/admin">admin</input type = submit value= 'Admin' name = 'adminlogin'></a></li>
+                <li class="cta"><a href="/sign_up">signup</input type = submit value= 'Signup' name = 'signup'></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-section site-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <h1 class="d-block mb-4" data-aos="fade-up" data-aos-delay="200">Test the rating system</h1>
+            <span class="d-block mb-5 caption" data-aos="fade-up" data-aos-delay="300">feel free to try it out without creating an account below</span>
+            <a href="/testresult" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>Rate Now</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Movies</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+          </div>
+        </div>
+
+        <div class="row align-items-center speaker">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+            <img src="{{ url_for('static',filename='workshop/images/person_1.jpg') }}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <h2 class="text-white mb-4 name" data-aos="fade-right" data-aos-delay="200">Bajirao Mastani</h2>
+            <div class="bio pl-lg-5">
+              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-right" data-aos-delay="300">Review</span>
+              <p class="mb-4" data-aos="fade-right" data-aos-delay="400">Excellent movie, amazing sets, brilliant cinematography, classic songs with classic cinematography, wonderful work by all actors except for Deepika Padukone..Perhaps this is the worst acting ever by her. Priyanka Chopra with her expressive eyes moves you in certain scenes with excellent dialogue delivery.And the star of all is Raveer Singh which amazes you with outstanding performance so much that you cant imagine anyone except him as Bajirao</p>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center speaker">
+          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2" data-aos="fade" data-aos-delay="100">
+            <img src="{{ url_for('static',filename='workshop/images/person_2.jpg') }}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 ml-auto order-lg-1">
+            <h2 class="text-white mb-4 name" data-aos="fade-left" data-aos-delay="200">Uri</h2>
+            <div class="bio pr-lg-5">
+              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-left" data-aos-delay="300">Review</span>
+              <p class="mb-4" data-aos="fade-left" data-aos-delay="400">""Uri: The Surgical strike"- A fitting tribute to the Indian army. 
+This may not be the best of the army movies we have had so far, but it surely does not disappoint. Based on the Surgical strike carried out by Indian army in 2016, the movie is indeed a pleasure to watch. It is well paced and keeps you engrossed throughout. Although the story is predictable (since we all have read about the utter successful mission) but the movie still keeps you glued. There are moments which will give goosebumps, make you laugh, will moist your eyes but surely make you feel immensely proud of our national heroes and their capabilities.. </p>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center speaker">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+            <img src="{{ url_for('static',filename='workshop/images/person_3.jpg') }}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <h2 class="text-white mb-4 name" data-aos="fade-right" data-aos-delay="200"><span style="padding-left:40px;"></span>KGF</h2>
+            <div class="bio pl-lg-5">
+              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-right" data-aos-delay="300">Review</span>
+              <p class="mb-4" data-aos="fade-right" data-aos-delay="400">KGF, from start to finish, is full of high octane action sequences, The dialogues are sharp and effective, Music is average, but gets compensated through an outrageous BGM (some influence from the soundtrack of Hams Zimmer's "The Oil"(Dunkirk).Fabulous movie, director has done a great job to keep the intensity throughout the movie. Nice bgm and nice acting by each and everyone.KGF its not only blockbuster of sandalwood its a world class movie directed by prashant neel. hats off to prashant neel for such a beautiful story, also presented in such a way that it made me to watch 4 shows of first day. still i am going sunday with family. its a superb movie, cinematography, background score is simply superb. no doubt about that this movie is going break all records. once again rocking star shows that he is always a king of box office. superb. must watchable movie.</p>
+             
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="row align-items-center speaker">
+          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2" data-aos="fade" data-aos-delay="100">
+            <img src="{{ url_for('static',filename='workshop/images/person_4.jpg') }}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6 ml-auto order-lg-1">
+            <h2 class="text-white mb-4 name" data-aos="fade-left" data-aos-delay="200">Stree</h2>
+            <div class="bio pr-lg-5">
+              <span class="text-uppercase text-primary d-block mb-3" data-aos="fade-left" data-aos-delay="300">Review</span>
+              <p class="mb-4" data-aos="fade-left" data-aos-delay="400">This movie stands out for its unique narration of a horror story with humour and suspense and finally delivers a message beautifully without being preachy or dramatic , the way the movie is written and narrated keeping you at the edge of your seat with smile,laughter as well as  curiosity is commendable . Performances by lead and support cast add beauty to the film . I recommend watching this experimental fresh film in the cinemas .</p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+    
+   
+  </div>
+
+  <script src="{{ url_for('static',filename='workshop/js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/jquery-ui.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/jquery.countdown.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='workshop/js/aos.js') }}"></script>
+
+<script src="{{ url_for('static',filename='workshop/js/main.js') }}"></script>
+
+    
+  </body>
+</html>
