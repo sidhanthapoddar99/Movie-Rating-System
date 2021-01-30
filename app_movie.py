@@ -1,16 +1,23 @@
 from flask import Flask, render_template, request
-from wtforms import Form, TextAreaField, validators
 import sqlite3
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import os
-import numpy as np
-import Algorithmia
 
 #to add the nltk corpora for heroku integration
 #nltk.data.path.append('/nltk_data')
 
+PROFANITY_WORDS = {'fuck', 'shit', 'ass', 'damn', 'bitch', 'bastard', 'dick', 'crap', 'piss', 'slut', 'whore'}
+
+def contains_profanity(text):
+    words = set(text.lower().split())
+    return bool(words & PROFANITY_WORDS)
+
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', 'admin')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', '123456789')
+
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
 
 @app.route('/')
@@ -28,8 +35,8 @@ def admin_check():
         password = request.form['Password']
 
 
-        if username == 'admin':
-                if password == '123456789':
+        if username == ADMIN_USERNAME:
+                if password == ADMIN_PASSWORD:
                         return render_template('adminportal.html')
                 else:
                         return render_template('unsuccessfulloginattempt.html')
@@ -42,8 +49,8 @@ def deluseracc():
         with sqlite3.connect('softwareproject.db') as con:
                 cur = con.cursor()
                 cur.execute('DELETE FROM User_Auth')
-                con.commit
-                
+                con.commit()
+
         return render_template('deleteaccountconf.html')
 
 @app.route('/deluseractivity', methods = ['GET', 'POST'])
@@ -51,11 +58,9 @@ def deluseractivity():
         with sqlite3.connect('softwareproject.db') as con:
                 cur = con.cursor()
                 cur.execute('DELETE FROM User_Info')
-                con.commit
-                
+                con.commit()
+
         return render_template('deleteactivityconf.html')
-        
-        return
 
 @app.route('/viewuseracc', methods = ['GET', 'POST'])
 def viewuseracc():
@@ -107,7 +112,7 @@ def logincheck():
                 cur = con.cursor()
                 cur.execute('SELECT Password from User_Auth where UserId =?''',(username,))
                 correct_pass = cur.fetchall()
-        if(correct_pass[0][0] == password):
+        if correct_pass and correct_pass[0][0] == password:
                 #redirect to user profile portal to start again
                 return render_template('successfullogin.html')
         else:
@@ -130,11 +135,7 @@ def results2():
         username = str(request.form['UserName'])
         sentence = str(request.form['review'])
 
-        client = Algorithmia.client('simSZn2DdvecQYvltU1jrAhh2es1')
-        algo = client.algo('nlp/ProfanityDetection/1.0.0')
-        algo.set_options(timeout=300) # optional
-        a= algo.pipe(sentence).result
-        if len(a.keys()) == 0:
+        if not contains_profanity(sentence):
                 
         
                 sid = SentimentIntensityAnalyzer()
@@ -188,7 +189,7 @@ def conf_del_user_history():
         with sqlite3.connect('softwareproject.db') as con:
                 cur = con.cursor()
                 cur.execute('DELETE FROM User_Info where UserId =?''',(username,))
-                con.commit
+                con.commit()
         return render_template('confuserinfodelete.html', uname=username)
 #Separate rendering for rate now button
 @app.route('/testresult', methods=['GET', 'POST'])
@@ -200,11 +201,7 @@ def testresult():
 def predict():
         sentence = str(request.form['review'])
 
-        client = Algorithmia.client('simSZn2DdvecQYvltU1jrAhh2es1')
-        algo = client.algo('nlp/ProfanityDetection/1.0.0')
-        algo.set_options(timeout=300) # optional
-        a= algo.pipe(sentence).result
-        if len(a.keys()) == 0:
+        if not contains_profanity(sentence):
 
                 sid = SentimentIntensityAnalyzer()
                 ss = sid.polarity_scores(sentence)
