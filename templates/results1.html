@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Results</title>
-</head>
-<body>
-
-	<h2>The Movie Prediction<br><br>{{res}}</h2>
-
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Rating Result{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark text-center" style="max-width: 500px;">
+        <p class="text-secondary text-uppercase mb-2" style="letter-spacing: 2px;">Predicted Rating</p>
+        <div class="rating-display mb-3">{{ res }}<span style="font-size: 1.5rem; color: var(--text-secondary);">/10</span></div>
+        <p class="text-secondary mb-4">Based on sentiment analysis of your review.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/testresult" class="btn-accent">Rate Another</a>
+            <a href="/" class="btn-outline-light-custom">Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

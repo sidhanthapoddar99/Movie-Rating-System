@@ -1,49 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Results</title>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png"  href= "{{ url_for('static',filename='Login_v10/images/icons/favicon.ico') }}" />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/vendor/bootstrap/css/bootstrap.min.css') }}" >
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" >
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='Login_v10/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}" >
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/animate/animate.css') }}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/css-hamburgers/hamburgers.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/animsition/css/animsition.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/select2/select2.min.css') }}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/vendor/daterangepicker/daterangepicker.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/css/util.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Login_v10/css/main.css') }}">
-<!--===============================================================================================-->
-</head>
-<body style="background-image: url({{ url_for('static',filename='Login_v10/movies-made-great-white-north.jpg') }});background-repeat: no-repeat; background-size: cover;">
-
-
-<form method= "POST" action="/results">
-
-<div class="limiter" >
-					<div class="container-login100">
-						<div class="wrap-login100 p-t-50 p-b-90" style="padding-left:10px; padding-right:10px;">
-							The Movie Prediction<br><br>{{res}}
-								</div>
-
-							</form>
-						</div>
-					</div>
-				</div>
-
-	</form>
-</body>
-</html>
-
+{% extends "base.html" %}
+{% block title %}Rating Result{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark text-center" style="max-width: 500px;">
+        <p class="text-secondary text-uppercase mb-2" style="letter-spacing: 2px;">Predicted Rating</p>
+        <div class="rating-display mb-3">{{ res }}<span style="font-size: 1.5rem; color: var(--text-secondary);">/10</span></div>
+        <p class="text-secondary mb-4">Based on sentiment analysis of your review.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/testresult" class="btn-accent">Rate Another</a>
+            <a href="/" class="btn-outline-light-custom">Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

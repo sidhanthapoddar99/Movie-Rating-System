@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Test System</title>
-</head>
-<body>
-<h2>To test the rating system, feel free to try it out without creating an account below : </h2>
-<br>
-<br>
-	<form method= "POST" action="/results">
-
-
-			<br><div>Enter review : 
-				<input type = "text" name ="review"><br>
-			</div>
-		
-		<div>
-			<br><input type=submit value='Predict rating' name='submit_btn'>
-		</div>
-	</form>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Rate a Movie{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark" style="width: 100%; max-width: 550px;">
+        <h2 class="section-title text-center mb-2">Rate a Movie</h2>
+        <p class="text-secondary text-center mb-4">Write your review and we'll predict a rating out of 10.</p>
+        <form method="POST" action="/results">
+            <div class="mb-4">
+                <textarea name="review" class="form-control form-control-dark" rows="5" placeholder="Write your movie review here..." required></textarea>
+            </div>
+            <button type="submit" class="btn-accent w-100">Predict Rating</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

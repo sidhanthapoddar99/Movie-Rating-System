@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Signup confirmation</title>
-</head>
-<body>
-<h2>Credentials have been added! Kindly go  back to the home page! </h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Account Created{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark text-center" style="max-width: 500px;">
+        <h2 class="section-title mb-3">Account Created</h2>
+        <p class="text-secondary mb-4">Your credentials have been saved. You can now log in.</p>
+        <a href="/login" class="btn-accent">Go to Login</a>
+    </div>
+</div>
+{% endblock %}

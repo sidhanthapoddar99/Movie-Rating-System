@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Error</title>
-</head>
-<body>
-<h2>Due to some invalid action your request could not be served </h2>
-<br>
-<br>
-<h3> Some causes could be entry of invalid/illegal data. Please try process again from the homepage </h3>
-<br>
-
-
-<br><div><a href= "/"> <input type = submit value= 'Go back to Home Page' name = 'Redirect_to_homepage'>
-	</div></a>
-
-
-
-	
-
-</body>
-</html>
-
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark text-center" style="max-width: 500px;">
+        <h2 class="section-title mb-3" style="color: var(--accent);">Something Went Wrong</h2>
+        <p class="text-secondary mb-4">An unexpected error occurred. Please try again.</p>
+        <a href="/" class="btn-accent">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

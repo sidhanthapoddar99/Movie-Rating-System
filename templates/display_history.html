@@ -1,22 +1,24 @@
-<html>
-<head>
-	<title>Display user history</title>
-		
-</head>		
-<body>
-<H1>Displaying your history, user {{uname}}: 	</H1>
-
-
-<table>	
-    <tr>
-        <td>{{items}}</td>
-
-    </td>
-
-	</body>
-</html>
-
-
-
-
-
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+<div class="container" style="padding: 4rem 0;">
+    <h2 class="section-title mb-4">History for {{ uname }}</h2>
+    {% if items %}
+    <div class="table-responsive">
+        <table class="table table-dark-custom">
+            <thead>
+                <tr><th>Review</th><th>Rating</th></tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert-dark-custom">No history found for this user.</div>
+    {% endif %}
+    <a href="/portal" class="btn-outline-light-custom mt-3">Back to Portal</a>
+</div>
+{% endblock %}

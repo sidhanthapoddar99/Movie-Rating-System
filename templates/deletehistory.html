@@ -1,33 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Remove history</title>
-</head>
-<body>
-<h2>ARE YOU SURE YOU WANT TO REMOVE YOUR HISTORY? IF YES, ENTER YOUR USERNAME : ELSE GO BACK TO PORTAL!</h2>
-
-<form method= "POST" action="/confirm_delete_user_info">
-<br><div>Enter Username  : 
-				<input type = "text" name ="UserName"><br>
-			</div>
-
-
-<br><div><input type = submit value= 'Delete history' name = 'delete_history'>
-	</div></a>
-
-
-<br><div><a href= "/portal"> <input type = submit value= 'Go to your portal' name = 'Redirect_to_portal'>
-	</div></a>
-
-</form>
-
-
-</body>
-</html>
-
-
-
-
-
-
-
+{% extends "base.html" %}
+{% block title %}Delete History{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark" style="width: 100%; max-width: 420px;">
+        <h2 class="section-title text-center mb-4">Delete History</h2>
+        <p class="text-secondary text-center mb-3">Enter your username to delete all your history.</p>
+        <form method="POST" action="/confirm_delete_user_info">
+            <div class="mb-3">
+                <input type="text" name="UserName" class="form-control form-control-dark" placeholder="Enter your username" required>
+            </div>
+            <button type="submit" class="btn-accent w-100">Delete History</button>
+        </form>
+        <p class="text-center mt-3"><a href="/portal" style="color: var(--text-secondary);">Back to Portal</a></p>
+    </div>
+</div>
+{% endblock %}

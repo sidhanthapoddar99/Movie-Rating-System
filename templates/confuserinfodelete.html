@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Successful deletion!</title>
-</head>
-<body>
-<h2>Record Successfully Deleted, USER - {{uname}}</h2>
-
-
-
-
-	
-
-</body>
-</html>
-
-
-
+{% extends "base.html" %}
+{% block title %}History Deleted{% endblock %}
+{% block content %}
+<div class="page-center">
+    <div class="card-dark text-center" style="max-width: 500px;">
+        <h2 class="section-title mb-3">History Deleted</h2>
+        <p class="text-secondary mb-4">All records for <strong>{{ uname }}</strong> have been deleted.</p>
+        <a href="/portal" class="btn-accent">Back to Portal</a>
+    </div>
+</div>
+{% endblock %}
