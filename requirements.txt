@@ -120,7 +120,7 @@ tqdm==4.26.0
 traitlets==4.3.2
 Twisted==18.7.0
 ujson==1.35
-urllib3==1.23
+urllib3==1.26.5
 watson-developer-cloud==2.1.0
 wcwidth==0.1.7
 webencodings==0.5.1
